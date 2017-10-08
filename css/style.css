@@ -1,0 +1,34 @@
+.form-btn{
+    width: 100%;
+}
+.form-control:focus{
+    box-shadow: 0px 0px 10px #80bdff;
+}
+.display-none{
+    visibility: hidden;
+}
+.border{
+    border: 1 solid #80bdff;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.border-danger{
+    border: 1px solid #FB3D40;
+    box-shadow: 0px 0px 5px #FB3D40;
+}
+#signup,#login{
+    width: 100%;
+    margin-top: 40px;
+}
+#emailHelp{
+    color: #FB3D40;
+}
+.r-button{
+    margin-left: 15px;
+    margin-bottom: 15px !important;
+}
+p{
+    margin-bottom: 0.5rem;
+}
+.card{
+    padding: 35px;
+}

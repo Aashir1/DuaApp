@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mdb.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" -->
+    <title>Document</title>
+    <script src="js/svg-custom.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDTuhRKXTZwGFuxUd_ozoCy3rc-hMb3YU0",
+            authDomain: "dua-app-93016.firebaseapp.com",
+            databaseURL: "https://dua-app-93016.firebaseio.com",
+            projectId: "dua-app-93016",
+            storageBucket: "dua-app-93016.appspot.com",
+            messagingSenderId: "409094505730"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body id="body">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <a class="navbar-brand" href="#">
+            <img src="images/dua-hands.svg" alt="dua-hand" class="dua-hand-image">
+                Dua App
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon" id="delete-classes"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end bismillah-ul">
+
+                    <li class="nav-item dropdown">
+                        <img class="bismillah-image" src="images/bismilla.svg" alt="bismillah-image">
+                    </li>
+                </ul>
+                <div class="d-inline ml-auto w-100 justify-content-end text-right" id="user-w">
+                        <a class="btn btn-outline-info waves-effect " id="feeds-btn" href="feeds.html">Feeds</a>
+                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end username-ul d-inline" id="ka-ul">
+
+                        <li class="nav-item dropdown d-inline" id="ka-li">
+                            <a class="nav-link dropdown-toggle d-inline" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            
+                            </a>
+                            <div class="dropdown-menu" id="dropdown-menu-custom" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="logout-btn" href="#">Logout</a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="row row-custom">
+            <div class="col-md-6 col-lg-6 ">
+                <div class="card" style="box-shadow: none;padding:0px;">
+                    <h1 class="text-center">User Info</h1>
+                    <div class="card" style="width: 100%; box-shadow: none; padding:0px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h3 class="d-inline">Name :</h3>
+                                <span id="name" class="user-info"></span>
+                            </li>
+                            <li class="list-group-item">
+                                <h3 class="d-inline">Email :</h3>
+                                <span id="email" class="user-info"></span>
+                            </li>
+                            
+                            <li class="list-group-item">
+                                <h3 class="d-inline">Gender :</h3>
+                                <span id="gender" class="user-info"></span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+                        <a href="javascript:void(0)" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 ml-auto w-100 justify-content-end">
+                <div class="mx-auto w-100 justify-content-center">
+                    <div class="md-form textarea">
+                        <i class="fa fa-pencil prefix">
+                            <img src="images/pencil.svg" alt="pencil.svg" class="pencil-svg">
+                        </i>
+                        <textarea type="text" id="duatext" class="md-textarea"></textarea>
+                        <label for="duatext">Dua</label>
+                    </div>
+                </div>
+                <div class="mx-auto w-100 justify-content-center">
+                    <div class="md-form">
+                        <i class="fa fa-pencil prefix">
+                            <img src="images/user-.svg" alt="user.svg" class="user-svg">
+                        </i>
+                        <input type="text" id="dua-for" class="form-control validate">
+                        <label for="dua-for" data-error="wrong" data-success="right">Dua For</label>
+                    </div>
+                </div>
+                <div class="col-md-9 col-lg-9 ml-auto w-100 justify-content-end submit-btn-wrapper">
+                    <button type="button" id="submit-btn" class="btn btn-info btn-rounded ">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- <script>
+        if (!Modernizr.svg) { var i = document.getElementsByTagName("img"), j, y; for (j = i.length; j--;) { y = i[j].src; if (y.match(/svg$/)) { i[j].src = y.slice(0, -3) + 'png' } } };
+    </script> -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery.js.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
